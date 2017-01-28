@@ -29,6 +29,7 @@ get '/token' do
 
   # Create IP Messaging grant for our token
   grant = Twilio::Util::AccessToken::IpMessagingGrant.new
+  grant.push_credential_sid = 'CRe9c5eff29e744709d7df875f8a797bf0'
   grant.service_sid = ENV['TWILIO_IPM_SERVICE_SID']
   grant.endpoint_id = endpoint_id
   token.add_grant grant
